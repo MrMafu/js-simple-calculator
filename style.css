@@ -1,0 +1,121 @@
+:root {
+    --container-bg: #101218;
+    --display-bg: #2e313b;
+    --button-bg: #2e313b;
+    --hover-bg: #43464f;
+    --operator-bg: #537fe7;
+    --operator-hover: #7599ec;
+    --operator-active: #98b2f1;
+    --clear-backspace-bg: #ffd523;
+    --clear-backspace-hover: #ffe265;
+    --clear-backspace-active: #ffeea7;
+    --text-color: white;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    background-color: var(--container-bg);
+    max-width: 30rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+#display {
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    background-color: var(--display-bg);
+    color: var(--text-color);
+    font-size: 1.75rem;
+    text-align: right;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+button {
+    border: none;
+    width: 100%;
+    aspect-ratio: 1;
+    min-width: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: var(--hover-bg);
+}
+
+button:active {
+    background-color: var(--operator-active);
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: var(--operator-bg);
+}
+
+.operator:hover {
+    background-color: var(--operator-hover);
+}
+
+#equals {
+    background-color: #50d890;
+}
+
+#equals:hover {
+    background-color: #73e0a6;
+}
+
+#clear, #backspace {
+    background-color: var(--clear-backspace-bg);
+}
+
+#clear:hover, #backspace:hover {
+    background-color: var(--clear-backspace-hover);
+}
+
+@media (max-width: 600px) {
+    #container {
+        max-width: 22rem;
+        border-radius: 0.75rem;
+    }
+
+    button {
+        min-width: 2.5rem;
+        font-size: 1.25rem;
+    }
+
+    #display {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    #keys {
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+}
